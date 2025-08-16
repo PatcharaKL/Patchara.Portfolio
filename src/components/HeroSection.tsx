@@ -1,8 +1,10 @@
 import React from "react";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import useScrollToSection from "@/hooks/useScrollToSection";
+import useScrollPosition from "@/hooks/useScrollPosition";
 const HeroSection = () => {
   const { scrollToSection } = useScrollToSection();
+  const scrollY = useScrollPosition();
 
   return (
     <section
