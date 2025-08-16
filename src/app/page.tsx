@@ -512,13 +512,13 @@ export default function Homepage() {
                 icon: Mail,
                 title: "Email",
                 link: "mailto:your-email@domain.com",
-                text: "your-email@domain.com",
+                text: "patchara.pck@gmail.com",
               },
               {
                 icon: Linkedin,
                 title: "LinkedIn",
-                link: "#",
-                text: "linkedin.com/in/your-profile",
+                link: "https://www.linkedin.com/in/patchara-kleebbua/",
+                text: "Patchara Kleebbua",
               },
               {
                 icon: Github,

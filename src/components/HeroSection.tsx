@@ -58,19 +58,21 @@ const HeroSection = () => {
           style={{ animationDelay: "800ms" }}
         >
           <a
+            target="_blank"
             href="https://github.com/PatcharaKL"
             className="text-slate-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
           >
             <Github size={24} />
           </a>
           <a
-            href="#"
+            target="_blank"
+            href="https://www.linkedin.com/in/patchara-kleebbua"
             className="text-slate-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
           >
             <Linkedin size={24} />
           </a>
           <a
-            href="mailto:your-email@domain.com"
+            href="mailto:patchara.pck@gmail.com"
             className="text-slate-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
           >
             <Mail size={24} />
