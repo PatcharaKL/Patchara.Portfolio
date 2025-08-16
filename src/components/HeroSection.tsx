@@ -1,22 +1,22 @@
 import React from "react";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import useScrollToSection from "@/hooks/useScrollToSection";
-import useScrollPosition from "@/hooks/useScrollPosition";
+import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+
 const HeroSection = () => {
   const { scrollToSection } = useScrollToSection();
-  const scrollY = useScrollPosition();
+  const { ref, inView } = useInViewAnimation({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-screen flex items-center justify-center relative pt-12 md:pt-0 transition-all duration-800"
+      ref={ref}
     >
-      <div
-        className="max-w-4xl mx-auto px-4 text-center relative z-10"
-        style={{
-          transform: `translateY(${scrollY * 0.1}px)`,
-        }}
-      >
+      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-full flex items-center justify-center text-4xl font-bold text-blue-400 border border-blue-500/30 backdrop-blur-sm animate-glow">
             P

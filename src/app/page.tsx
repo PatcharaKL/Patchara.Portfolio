@@ -16,10 +16,6 @@ import {
   GitBranch,
   Terminal,
   Cloud,
-  Home,
-  User,
-  Briefcase,
-  Phone,
   Smartphone,
   Globe2,
   Palette,
@@ -83,12 +79,6 @@ export default function Homepage() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
-  };
 
   const skillIcons = {
     "React.js": Code,
@@ -169,18 +159,23 @@ export default function Homepage() {
 
   const projects = [
     {
-      title: "TeleHealth Platform",
-      category: "Healthcare Technology",
+      title: "Infrastructure Automation at KBTG",
+      category: "Enterprise Infrastructure",
       description:
-        "Comprehensive telemedicine platform connecting patients with healthcare providers through video consultations and prescription management.",
-      tech: ["Next.js", "Tailwind CSS", "WebRTC", "RESTful APIs"],
-      status: "Production",
-      role: "Frontend Developer",
+        "VMware vRO workflow development and ServiceNow integration for automated infrastructure provisioning in banking environment.",
+      tech: [
+        "VMware vRO/vRA",
+        "ServiceNow API",
+        "JavaScript",
+        "Enterprise Integration",
+      ],
+      status: "Active Development",
+      role: "Infrastructure Automation Engineer",
       highlights: [
-        "Built responsive web interface for cross-device compatibility",
-        "Implemented real-time video consultation functionality",
-        "Created intuitive dashboards for patients and providers",
-        "Currently serving users across Thailand",
+        "Automated complex infrastructure provisioning workflows",
+        "Integrated ServiceNow with VMware infrastructure automation",
+        "Reduced manual deployment processes significantly",
+        "Enhanced operational efficiency in banking-grade environment",
       ],
     },
     {
@@ -199,23 +194,18 @@ export default function Homepage() {
       ],
     },
     {
-      title: "Infrastructure Automation at KBTG",
-      category: "Enterprise Infrastructure",
+      title: "TeleHealth Platform",
+      category: "Healthcare Technology",
       description:
-        "VMware vRO workflow development and ServiceNow integration for automated infrastructure provisioning in banking environment.",
-      tech: [
-        "VMware vRO/vRA",
-        "ServiceNow API",
-        "JavaScript",
-        "Enterprise Integration",
-      ],
+        "Comprehensive telemedicine platform connecting patients with healthcare providers through video consultations and prescription management.",
+      tech: ["Next.js", "Tailwind CSS", "WebRTC", "RESTful APIs"],
       status: "Production",
-      role: "Infrastructure Automation Engineer",
+      role: "Frontend Developer",
       highlights: [
-        "Automated complex infrastructure provisioning workflows",
-        "Integrated ServiceNow with VMware infrastructure automation",
-        "Reduced manual deployment processes significantly",
-        "Enhanced operational efficiency in banking-grade environment",
+        "Built responsive web interface for cross-device compatibility",
+        "Implemented real-time video consultation functionality",
+        "Created intuitive dashboards for patients and providers",
+        "Currently serving users across Thailand",
       ],
     },
     {
@@ -290,16 +280,14 @@ export default function Homepage() {
             transform: `translateY(${scrollY * 0.05}px)`,
           }}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center animate-fade-in">
-            About Me
-          </h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-left">
+            <div>
               <div className="w-64 h-64 mx-auto bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg mb-6 flex items-center justify-center text-6xl font-bold text-slate-500 border border-slate-700 backdrop-blur-sm">
                 Photo
               </div>
             </div>
-            <div className="space-y-4 text-slate-300 leading-relaxed animate-fade-in-right">
+            <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
                 I{"'"}m a software engineer with experience spanning full-stack
                 development and infrastructure automation. My current role at
@@ -329,7 +317,7 @@ export default function Homepage() {
       {/* Skills Section */}
       <section id="skills" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 md:pl-20">
-          <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
+          <h2 className="text-3xl font-bold mb-12 text-center">
             Technical Skills
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -338,7 +326,7 @@ export default function Homepage() {
               return (
                 <div
                   key={category}
-                  className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 animate-fade-in-up group"
+                  className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-center mb-4">
@@ -358,7 +346,7 @@ export default function Homepage() {
                       return (
                         <div
                           key={skill}
-                          className="text-slate-300 p-3 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-300 transform hover:translate-x-1 animate-fade-in border-l-2 border-transparent hover:border-blue-400/50"
+                          className="text-slate-300 p-3 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-300 transform hover:translate-x-1 border-l-2 border-transparent hover:border-blue-400/50"
                           style={{
                             animationDelay: `${
                               index * 100 + skillIndex * 50
@@ -391,14 +379,14 @@ export default function Homepage() {
       {/* Projects Section */}
       <section id="projects" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 md:pl-20">
-          <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
+          <h2 className="text-3xl font-bold mb-12 text-center">
             Featured Projects
           </h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500 transform hover:scale-105 animate-fade-in-up group"
+                className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500 transform hover:scale-105 group"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex justify-between items-start mb-4">
@@ -459,14 +447,14 @@ export default function Homepage() {
       {/* Experience Section */}
       <section id="experience" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-4 md:pl-20">
-          <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
+          <h2 className="text-3xl font-bold mb-12 text-center">
             Professional Experience
           </h2>
           <div className="space-y-8">
             {experience.map((job, index) => (
               <div
                 key={index}
-                className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500 animate-fade-in-up"
+                className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
@@ -506,11 +494,9 @@ export default function Homepage() {
       {/* Contact Section */}
       <section id="contact" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8 animate-fade-in">
-            Let{"'"}s Connect
-          </h2>
+          <h2 className="text-3xl font-bold mb-8">Let{"'"}s Connect</h2>
           <p
-            className="text-slate-300 max-w-2xl mx-auto mb-12 animate-fade-in-up"
+            className="text-slate-300 max-w-2xl mx-auto mb-12"
             style={{ animationDelay: "200ms" }}
           >
             I{"'"}m interested in connecting with professionals, teams, and
@@ -543,7 +529,7 @@ export default function Homepage() {
             ].map((contact, index) => (
               <div
                 key={contact.title}
-                className="text-center p-6 bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:scale-105 animate-fade-in-up"
+                className="text-center p-6 bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:scale-105"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <contact.icon className="w-8 h-8 mx-auto mb-4 text-blue-400" />
@@ -561,7 +547,7 @@ export default function Homepage() {
           </div>
 
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
             style={{ animationDelay: "600ms" }}
           >
             <a
@@ -588,121 +574,6 @@ export default function Homepage() {
           </p>
         </div>
       </footer>
-
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fade-in-left {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fade-in-right {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slide-down {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes glow {
-          0%,
-          100% {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-          }
-          50% {
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-          }
-        }
-
-        html {
-          scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: rgba(15, 23, 42, 0.8);
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: rgba(59, 130, 246, 0.3);
-          border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: rgba(59, 130, 246, 0.5);
-        }
-
-        .animate-fade-in {
-          animation: fade-in 1s ease-out forwards;
-          opacity: 0;
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 1s ease-out forwards;
-          opacity: 0;
-        }
-
-        .animate-fade-in-left {
-          animation: fade-in-left 1s ease-out forwards;
-          opacity: 0;
-        }
-
-        .animate-fade-in-right {
-          animation: fade-in-right 1s ease-out forwards;
-          opacity: 0;
-        }
-
-        .animate-slide-down {
-          animation: slide-down 0.3s ease-out forwards;
-        }
-
-        .animate-glow {
-          animation: glow 3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 }
