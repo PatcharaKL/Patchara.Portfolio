@@ -3,7 +3,7 @@ import useScrollToSection from "@/hooks/useScrollToSection";
 import { Code, Terminal, Home, User, Briefcase, Phone } from "lucide-react";
 import useScrollPosition from "@/hooks/useScrollPosition";
 
-const FloatingNav = (activeSection: string) => {
+const FloatingNav = ({ activeSection }: { activeSection: string }) => {
   const { scrollToSection } = useScrollToSection();
   const scrollY = useScrollPosition();
   return (
