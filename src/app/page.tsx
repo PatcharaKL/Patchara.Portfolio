@@ -557,10 +557,12 @@ export default function Homepage() {
               <Mail size={16} className="mr-2" />
               Get in Touch
             </a>
-            <button className="px-8 py-3 border border-slate-600 text-slate-300 rounded-lg hover:bg-slate-800/50 hover:border-blue-500 transition-all duration-300 font-medium inline-flex items-center justify-center transform hover:scale-105">
+            {/* <button
+              className="px-8 py-3 border border-slate-600 text-slate-300 rounded-lg hover:bg-slate-800/50 hover:border-blue-500 transition-all duration-300 font-medium inline-flex items-center justify-center transform hover:scale-105"
+            >
               <Download size={16} className="mr-2" />
-              Download Resume
-            </button>
+              Download Resume Coming Soon
+            </button> */}
           </div>
         </div>
       </section>
