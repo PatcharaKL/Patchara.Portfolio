@@ -1,14 +1,19 @@
+"use client"
 import React from "react";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import useScrollToSection from "@/hooks/useScrollToSection";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { scrollToSection } = useScrollToSection();
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}   // starting state
+      animate={{ opacity: 1, y: 0 }}    // ending state
+      transition={{ duration: 0.8 }}    // how it animates
       id="hero"
-      className="min-h-screen flex items-center justify-center relative pt-12 md:pt-0 transition-all duration-800"
+      className="min-h-screen flex items-center justify-center relative pt-12 md:pt-0"
     >
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
         <div className="mb-8">
@@ -83,7 +88,7 @@ const HeroSection = () => {
           <ChevronDown size={24} className="text-slate-400" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

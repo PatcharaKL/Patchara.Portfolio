@@ -24,6 +24,7 @@ import {
   FileCode,
 } from "lucide-react";
 import FloatingNav from "@/components/FloatingNav";
+import { motion } from "framer-motion"
 
 export default function Homepage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -256,6 +257,21 @@ export default function Homepage() {
     },
   ];
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2, // delay each child
+      },
+    },
+  };
+
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 relative overflow-hidden">
       {/* Animated Background */}
@@ -273,7 +289,12 @@ export default function Homepage() {
       <HeroSection />
 
       {/* About Section */}
-      <section id="about" className="py-20 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        id="about" className="py-20 relative">
         <div
           className="max-w-4xl mx-auto px-4"
           style={{
@@ -312,22 +333,32 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        id="skills" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 md:pl-20">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Technical Skills
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, skillData], index) => {
               const IconComponent = skillData.icon;
               return (
-                <div
+                <motion.div
                   key={category}
+                  variants={fadeInUp}
                   className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 group"
-                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-center mb-4">
                     <div
@@ -348,9 +379,8 @@ export default function Homepage() {
                           key={skill}
                           className="text-slate-300 p-3 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-300 transform hover:translate-x-1 border-l-2 border-transparent hover:border-blue-400/50"
                           style={{
-                            animationDelay: `${
-                              index * 100 + skillIndex * 50
-                            }ms`,
+                            animationDelay: `${index * 100 + skillIndex * 50
+                              }ms`,
                           }}
                         >
                           <span className="flex items-center">
@@ -369,15 +399,20 @@ export default function Homepage() {
                       );
                     })}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        id="projects" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 md:pl-20">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Featured Projects
@@ -442,10 +477,15 @@ export default function Homepage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        id="experience" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-4 md:pl-20">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Professional Experience
@@ -489,10 +529,15 @@ export default function Homepage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        id="contact" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">Let{"'"}s Connect</h2>
           <p
@@ -537,6 +582,7 @@ export default function Homepage() {
                   {contact.title}
                 </h3>
                 <a
+                  target="_blank"
                   href={contact.link}
                   className="text-blue-400 hover:text-blue-300 transition-colors hover:underline"
                 >
@@ -565,7 +611,7 @@ export default function Homepage() {
             </button> */}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="bg-slate-900/50 backdrop-blur-sm text-slate-400 py-8 border-t border-slate-800/50">

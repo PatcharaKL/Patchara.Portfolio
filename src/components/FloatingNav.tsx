@@ -9,11 +9,10 @@ const FloatingNav = ({ activeSection }: { activeSection: string }) => {
   return (
     <>
       <nav
-        className={`fixed right-12 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ${
-          scrollY > 100
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-4"
-        } hidden md:block`}
+        className={`fixed right-12 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ${scrollY > 100
+          ? "opacity-100 translate-x-0"
+          : "opacity-0 translate-x-6"
+          } hidden md:block`}
       >
         <div className="bg-slate-900/70 backdrop-blur-xl border border-slate-700/50 rounded-full py-4 px-3 shadow-2xl">
           <div className="flex flex-col items-center space-y-4">
@@ -28,11 +27,10 @@ const FloatingNav = ({ activeSection }: { activeSection: string }) => {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`group relative p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                  activeSection === section
-                    ? "bg-blue-500/20 text-blue-400 scale-110"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
-                }`}
+                className={`group relative p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${activeSection === section
+                  ? "bg-blue-500/20 text-blue-400 scale-110"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+                  }`}
                 title={label}
               >
                 <Icon size={18} />
@@ -48,11 +46,10 @@ const FloatingNav = ({ activeSection }: { activeSection: string }) => {
 
       {/* Mobile Bottom Navigation */}
       <nav
-        className={`fixed bottom-4 left-4 right-4 z-50 transition-all duration-500 md:hidden ${
-          scrollY > 100
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4"
-        }`}
+        className={`fixed bottom-4 left-4 right-4 z-50 transition-all duration-500 md:hidden ${scrollY > 100
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-4"
+          }`}
       >
         <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl px-4 py-3 shadow-2xl">
           <div className="flex items-center justify-between">
@@ -67,11 +64,10 @@ const FloatingNav = ({ activeSection }: { activeSection: string }) => {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`group relative p-2.5 rounded-xl transition-all duration-300 transform hover:scale-110 ${
-                  activeSection === section
-                    ? "bg-blue-500/20 text-blue-400 scale-110"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
-                }`}
+                className={`group relative p-2.5 rounded-xl transition-all duration-300 transform hover:scale-110 ${activeSection === section
+                  ? "bg-blue-500/20 text-blue-400 scale-110"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+                  }`}
                 title={label}
               >
                 <Icon size={16} />
