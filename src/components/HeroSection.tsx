@@ -3,7 +3,7 @@ import React from "react";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import useScrollToSection from "@/hooks/useScrollToSection";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 const HeroSection = () => {
   const { scrollToSection } = useScrollToSection();
 
@@ -17,8 +17,13 @@ const HeroSection = () => {
     >
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
         <div className="mb-8">
-          <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-full flex items-center justify-center text-4xl font-bold text-blue-400 border border-blue-500/30 backdrop-blur-sm animate-glow">
-            P
+          <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-full flex items-center justify-center text-4xl font-bold text-blue-400  backdrop-blur-sm animate-glow overflow-hidden">
+            <Image
+              src="/profile.jpeg"
+              alt="Profile photo"
+              fill
+              className="object-cover w-full h-full"
+            />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-100 animate-fade-in-up">
             Full-Stack & Infrastructure Engineer

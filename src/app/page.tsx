@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import FloatingNav from "@/components/FloatingNav";
 import { motion } from "framer-motion"
+import Image from "next/image";
 
 export default function Homepage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -305,7 +306,12 @@ export default function Homepage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="w-64 h-64 mx-auto bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg mb-6 flex items-center justify-center text-6xl font-bold text-slate-500 border border-slate-700 backdrop-blur-sm">
-                Photo
+                <Image
+                  src="/profile.jpeg"
+                  alt="Profile photo"
+                  fill
+                  className="object-cover w-full h-full"
+                />
               </div>
             </div>
             <div className="space-y-4 text-slate-300 leading-relaxed">
