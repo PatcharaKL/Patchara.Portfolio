@@ -19,7 +19,7 @@ const HeroSection = () => {
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-full flex items-center justify-center text-4xl font-bold text-blue-400  backdrop-blur-sm animate-glow overflow-hidden">
             <Image
-              src="/profile.jpeg"
+              src="/images/profile.jpeg"
               alt="Profile photo"
               fill
               className="object-cover w-full h-full"

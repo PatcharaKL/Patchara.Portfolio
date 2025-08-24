@@ -307,7 +307,7 @@ export default function Homepage() {
             <div>
               <div className="w-64 h-64 mx-auto bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg mb-6 flex items-center justify-center text-6xl font-bold text-slate-500 border border-slate-700 backdrop-blur-sm">
                 <Image
-                  src="/profile.jpeg"
+                  src="/images/profile.jpeg"
                   alt="Profile photo"
                   fill
                   className="object-cover w-full h-full"
