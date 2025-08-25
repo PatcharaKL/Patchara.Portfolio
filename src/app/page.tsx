@@ -26,6 +26,7 @@ import {
 import FloatingNav from "@/components/FloatingNav";
 import { motion } from "framer-motion"
 import Image from "next/image";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function Homepage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -276,12 +277,7 @@ export default function Homepage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 relative overflow-hidden">
       {/* Animated Background */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 opacity-90" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-2000" />
-      </div>
+      <AnimatedBackground />
 
       {/* Floating Right Side Navigation */}
       <FloatingNav activeSection={activeSection} />
@@ -618,16 +614,14 @@ export default function Homepage() {
           </div>
         </div>
       </motion.section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900/50 backdrop-blur-sm text-slate-400 py-8 border-t border-slate-800/50">
+      <footer className="bg-slate-900/50 backdrop-blur-sm text-slate-400 py-8 border-t border-slate-800/50" >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p>
             &copy; 2024 Patchara Kleebbua. Thank you for taking the time to
             learn about my work.
           </p>
         </div>
-      </footer>
+      </footer >
     </div>
   );
 }
