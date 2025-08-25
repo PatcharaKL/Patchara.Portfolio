@@ -69,7 +69,7 @@ const TestimonialPage = () => {
                         <div className="flex flex-col items-center w-full text-center gap-2">
                             <h1 className="text-2xl sm:text-3xl font-bold">Share Your Testimonial</h1>
                             <p className="text-sm sm:text-base">
-                                I'd love to hear your experience working with me. Your testimonial may be displayed on my portfolio with your consent.
+                                I&apos;d love to hear your experience working with me. Your testimonial may be displayed on my portfolio with your consent.
                             </p>
                         </div>
 
