@@ -127,7 +127,7 @@ export default function Homepage() {
       status: "In development · launching December",
       statusColor: "text-blue-400 bg-blue-500/20 border-blue-500/30",
       description:
-        "Sole engineer and product owner for an IDP that replaces a manual ServiceNow → Excel → vRA relay — previously days per request — with self-service VM and OpenShift namespace provisioning.",
+        "Sole engineer and product owner for an IDP that replaces a manual ServiceNow → Excel → vRA chain - a process that used to take days - with self-service VM and OpenShift namespace provisioning.",
       highlights: [
         "Self-service request platform with templates for clustered databases and OpenShift namespaces",
         "Admin plane for infrastructure standards: network schemas, versioned software catalog, OS mount/disk standards",
@@ -162,9 +162,9 @@ export default function Homepage() {
       status: "Ongoing",
       statusColor: "text-slate-400 bg-slate-500/20 border-slate-500/30",
       description:
-        "Proxmox VE homelab used for hosting personal services and for trying infrastructure-as-code and platform tooling hands-on before applying them at work.",
+        "Proxmox VE homelab I use to host personal services and try out infrastructure tooling before bringing it to work.",
       highlights: [
-        "Immich, Pi-hole, Plane, K3s, Caddy, Tailscale — all self-hosted",
+        "Immich, Pi-hole, Plane, K3s, Caddy, Tailscale - all self-hosted",
         "Testing ground for Terraform, K3s, and container tooling",
       ],
       tech: ["Proxmox VE", "K3s", "Docker", "Terraform", "Caddy", "Tailscale"],
@@ -177,7 +177,7 @@ export default function Homepage() {
       status: "Active Development",
       statusColor: "text-green-400 bg-green-500/20 border-green-500/30",
       description:
-        "Comprehensive request management and workflow automation system designed as a ServiceNow alternative for enterprise clients.",
+        "Request management and workflow automation system built as a ServiceNow alternative for enterprise clients.",
       highlights: [
         "Leading full-stack development for enterprise clients",
         "Implementing complex workflow automation features",
@@ -211,11 +211,11 @@ export default function Homepage() {
       period: "Mar 2023 – Present",
       location: "Bangkok, Thailand",
       description:
-        "Sole engineer and product owner for an internal developer platform covering VM and OpenShift namespace provisioning, decommissioning, and infrastructure automation across several teams.",
+        "Sole engineer and product owner for an internal developer platform handling VM and OpenShift namespace provisioning, decommissioning, and infra automation across several teams.",
       achievements: [
         "Own the architecture decisions across the platform: vendor abstraction layer, task orchestration engine, Resource Schema Registry",
         "Gather requirements directly from stakeholders, run daily coordination meetings, and manage delivery across a 3-person team",
-        "Automated provisioning and decommissioning workflows for Network, PID, and Platform teams — estimated 90% reduction in manual effort",
+        "Automated provisioning and decommissioning workflows for Network, PID, and Platform teams - estimated 90% reduction in manual effort",
         "Built the auth layer on Entra ID OIDC with App Roles for RBAC",
         "Set up the team's engineering practices: spec-driven development, mandatory MR review, CI running go vet, golangci-lint, go test -race, and go build",
         "Made the case internally for moving from vendor workflow tooling to a purpose-built platform, and took ownership of the resulting project",
@@ -279,17 +279,16 @@ export default function Homepage() {
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
                 I work on infrastructure automation and internal tooling. At
-                KBTG (via MFEC) I own KInfra Provisioning Center end to end —
-                from gathering requirements with stakeholders, to the
-                architecture decisions, to the Go services and admin plane that
-                run it.
+                KBTG (via MFEC) I own KInfra Provisioning Center end to end -
+                from requirements gathering to the architecture decisions to the
+                Go services and admin plane that run it.
               </p>
 
               {/* Highlighted paragraph */}
               <div className="pl-4 border-l-2 border-blue-500/50 bg-blue-500/5 rounded-r-lg py-3 pr-3">
                 <p className="text-sm">
                   Before this project, I spent two years building the automation
-                  layer entirely in VMware vRO using JavaScript — treating it as
+                  layer entirely in VMware vRO using JavaScript - treating it as
                   a backend runtime rather than a scripting tool. That included
                   an async task queue with worker execution, lock/release
                   semantics for concurrent runs, and configuration elements as a
@@ -391,7 +390,7 @@ export default function Homepage() {
             Featured Projects
           </h2>
 
-          {/* Featured KInfra card — full width */}
+          {/* Featured KInfra card - full width */}
           {projects
             .filter((p) => p.featured)
             .map((project) => (
@@ -462,7 +461,7 @@ export default function Homepage() {
               </motion.div>
             ))}
 
-          {/* Remaining project cards — 2-col grid */}
+          {/* Remaining project cards - 2-col grid */}
           <div className="grid lg:grid-cols-2 gap-6">
             {projects
               .filter((p) => !p.featured)
