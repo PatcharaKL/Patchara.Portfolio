@@ -87,23 +87,23 @@ export default function Homepage() {
       icon: Server,
       color: "text-orange-400",
       skills: [
-        { name: "Kubernetes & OpenShift", note: "working knowledge" },
-        { name: "VMware vRO/vRA", note: "" },
+        { name: "VMware vRO/vRA", note: "strongest" },
+        { name: "OpenShift", note: "working knowledge" },
         { name: "Docker", note: "" },
+        { name: "ServiceNow", note: "" },
+        { name: "Terraform", note: "beginner" },
         { name: "Proxmox VE", note: "" },
-        { name: "Terraform", note: "beginner, homelab" },
       ],
     },
     platform: {
-      title: "Platform & Tooling",
+      title: "Platform",
       icon: Shield,
       color: "text-purple-400",
       skills: [
-        { name: "GitLab CI/CD", note: "" },
         { name: "OpenAPI", note: "" },
         { name: "Task orchestration", note: "" },
         { name: "Vendor abstraction layers", note: "" },
-        { name: "ServiceNow integration", note: "" },
+        { name: "Internal developer platforms", note: "" },
       ],
     },
     frontend: {
@@ -127,7 +127,7 @@ export default function Homepage() {
       status: "In development · launching December",
       statusColor: "text-blue-400 bg-blue-500/20 border-blue-500/30",
       description:
-        "Lead engineer and product owner for an internal developer platform that replaces a manual ServiceNow to Excel to vRA relay, which previously took days per request, with a self-service system for VM and OpenShift namespace provisioning.",
+        "Engineer and product owner for an internal developer platform that replaces a manual ServiceNow to Excel to vRA relay, which previously took days per request, with a self-service system for VM and OpenShift namespace provisioning.",
       highlights: [
         "Self-service request platform supporting multiple resources in one submission, with templates for clustered databases and clustered OpenShift namespaces",
         "Admin plane for infrastructure standards: network schemas, versioned software catalog, OS mount and disk standards, and default agent install rules",
@@ -205,12 +205,12 @@ export default function Homepage() {
     {
       company: "MFEC Public Company Limited",
       companyDetail: "on-site at KBTG",
-      role: "Software Engineer & Platform Owner",
-      project: "KInfra Provisioning Center",
+      role: "Software Engineer",
+      project: "",
       period: "Mar 2023 – Present",
       location: "Bangkok, Thailand",
       description:
-        "Lead engineer and product owner for an internal developer platform covering VM and OpenShift namespace provisioning, decommissioning, and infrastructure automation across several teams.",
+        "Engineer and product owner for an internal developer platform covering VM and OpenShift namespace provisioning, decommissioning, and infrastructure automation across several teams.",
       achievements: [
         "Own the architecture decisions across the platform: vendor abstraction layer, task orchestration engine, Resource Schema Registry",
         "Gather requirements directly from stakeholders, run daily coordination meetings, and direct backlog work for two other engineers without formal management authority",
