@@ -87,23 +87,23 @@ export default function Homepage() {
       icon: Server,
       color: "text-orange-400",
       skills: [
-        { name: "Kubernetes & OpenShift", note: "working knowledge" },
-        { name: "VMware vRO/vRA", note: "" },
+        { name: "VMware vRO/vRA", note: "strongest" },
+        { name: "OpenShift", note: "working knowledge" },
         { name: "Docker", note: "" },
+        { name: "ServiceNow", note: "" },
+        { name: "Terraform", note: "beginner" },
         { name: "Proxmox VE", note: "" },
-        { name: "Terraform", note: "beginner, homelab" },
       ],
     },
     platform: {
-      title: "Platform & Auth",
+      title: "Platform",
       icon: Shield,
       color: "text-purple-400",
       skills: [
-        { name: "Entra ID OIDC", note: "" },
-        { name: "RBAC design", note: "" },
-        { name: "GitLab CI/CD", note: "" },
+        { name: "OpenAPI", note: "" },
         { name: "Task orchestration", note: "" },
-        { name: "Vendor abstraction", note: "" },
+        { name: "Vendor abstraction layers", note: "" },
+        { name: "Internal developer platforms", note: "" },
       ],
     },
     frontend: {
@@ -127,16 +127,15 @@ export default function Homepage() {
       status: "In development · launching December",
       statusColor: "text-blue-400 bg-blue-500/20 border-blue-500/30",
       description:
-        "Sole engineer and product owner for an IDP that replaces a manual ServiceNow → Excel → vRA chain - a process that used to take days - with self-service VM and OpenShift namespace provisioning.",
+        "Engineer and product owner for an internal developer platform that replaces a manual ServiceNow to Excel to vRA relay, which previously took days per request, with a self-service system for VM and OpenShift namespace provisioning.",
       highlights: [
-        "Self-service request platform with templates for clustered databases and OpenShift namespaces",
-        "Admin plane for infrastructure standards: network schemas, versioned software catalog, OS mount/disk standards",
-        "Architected vendor abstraction layer, task orchestration engine, and Resource Schema Registry",
-        "Auth built on Entra ID OIDC with App Roles for RBAC, issuing an app-owned JWT downstream",
-        "On approval, RITM is created and tasks run automatically through to a ready VM or namespace",
+        "Self-service request platform supporting multiple resources in one submission, with templates for clustered databases and clustered OpenShift namespaces",
+        "Admin plane for infrastructure standards: network schemas, versioned software catalog, OS mount and disk standards, and default agent install rules",
+        "Architected the vendor abstraction layer, task orchestration engine, and Resource Schema Registry",
+        "On approval, the RITM is created, tasks are generated and run automatically, through to a ready-to-use VM or namespace",
       ],
-      tech: ["Go", "PostgreSQL", "OpenShift", "Entra ID OIDC", "VMware vRO"],
-      role: "Platform Owner & Engineer",
+      tech: ["Go", "PostgreSQL", "OpenShift", "VMware vRO"],
+      role: "Platform Owner and Engineer",
     },
     {
       featured: false,
@@ -145,11 +144,11 @@ export default function Homepage() {
       status: "Production",
       statusColor: "text-green-400 bg-green-500/20 border-green-500/30",
       description:
-        "Automated infrastructure workflows for Network (F5 load balancing), PID (CyberArk), and Platform (Linux/Windows decommissioning) teams. Built in VMware vRO with JavaScript, pushed well past normal vendor usage.",
+        "Automated infrastructure workflows for several teams: Network (F5 load balancing), PID (CyberArk), and Platform (Linux and Windows decommissioning). Built in VMware vRO with JavaScript, pushed well past normal vendor usage: an async task queue with worker execution, lock and release semantics for concurrent runs, and configuration elements used as a persistence layer. Those teams now handle exceptions rather than running the work by hand.",
       highlights: [
         "Cut manual provisioning and decommissioning effort by an estimated 90%",
-        "Async task queue with worker execution, lock/release semantics, and config elements as persistence",
-        "Task runner engine using Strategy, Registry, Decorator, Worker Pool, and Repository patterns",
+        "Automated VM lifecycle tasks including IP reservation, backup jobs, patching, network configuration, and disk and filesystem setup",
+        "Built error handling and handoff so anything outside the automated path routes to the team that owns it",
         "Day-2 catalog for software installation after provisioning",
       ],
       tech: ["JavaScript", "VMware vRO/vRA", "ServiceNow API", "Async task queues"],
@@ -162,7 +161,7 @@ export default function Homepage() {
       status: "Ongoing",
       statusColor: "text-slate-400 bg-slate-500/20 border-slate-500/30",
       description:
-        "Proxmox VE homelab I use to host personal services and try out infrastructure tooling before bringing it to work.",
+        "Proxmox VE homelab used for hosting personal services and for trying infrastructure-as-code and platform tooling hands-on.",
       highlights: [
         "Immich, Pi-hole, Plane, K3s, Caddy, Tailscale - all self-hosted",
         "Testing ground for Terraform, K3s, and container tooling",
@@ -206,18 +205,17 @@ export default function Homepage() {
     {
       company: "MFEC Public Company Limited",
       companyDetail: "on-site at KBTG",
-      role: "Software Engineer & Platform Owner",
-      project: "KInfra Provisioning Center",
+      role: "Software Engineer",
+      project: "",
       period: "Mar 2023 – Present",
       location: "Bangkok, Thailand",
       description:
-        "Sole engineer and product owner for an internal developer platform handling VM and OpenShift namespace provisioning, decommissioning, and infra automation across several teams.",
+        "Engineer and product owner for an internal developer platform covering VM and OpenShift namespace provisioning, decommissioning, and infrastructure automation across several teams.",
       achievements: [
         "Own the architecture decisions across the platform: vendor abstraction layer, task orchestration engine, Resource Schema Registry",
-        "Gather requirements directly from stakeholders, run daily coordination meetings, and manage delivery across a 3-person team",
-        "Automated provisioning and decommissioning workflows for Network, PID, and Platform teams - estimated 90% reduction in manual effort",
-        "Built the auth layer on Entra ID OIDC with App Roles for RBAC",
-        "Set up the team's engineering practices: spec-driven development, mandatory MR review, CI running go vet, golangci-lint, go test -race, and go build",
+        "Gather requirements directly from stakeholders, run daily coordination meetings, and direct backlog work for two other engineers without formal management authority",
+        "Automated provisioning and decommissioning workflows for the Network, PID, and Platform teams, cutting manual effort by an estimated 90%",
+        "Set up the team's engineering practices: spec-driven development, mandatory merge request review before merge, and CI running go vet, golangci-lint, go test -race, and go build",
         "Made the case internally for moving from vendor workflow tooling to a purpose-built platform, and took ownership of the resulting project",
       ],
     },
@@ -290,18 +288,19 @@ export default function Homepage() {
                   Before this project, I spent two years building the automation
                   layer entirely in VMware vRO using JavaScript - treating it as
                   a backend runtime rather than a scripting tool. That included
-                  an async task queue with worker execution, lock/release
-                  semantics for concurrent runs, and configuration elements as a
-                  persistence layer. I also built a task runner engine using
+                  an async task queue with worker execution, lock and release
+                  semantics for concurrent runs, and configuration elements used
+                  as a persistence layer. I also built a task runner engine using
                   Strategy, Registry, Decorator, Worker Pool, and Repository
                   patterns, which is still how I approach system design.
                 </p>
               </div>
 
               <p>
-                I lead requirements gathering, run daily coordination across a
-                3-person team, and work with the Network, PID, and Platform
-                teams to automate work that used to be done by hand.
+                I lead requirements gathering, run daily coordination and direct
+                backlog work for two other engineers, and work with the Network,
+                PID, and Platform teams to automate work that used to be done by
+                hand.
               </p>
               <p>
                 Outside of work I run a Proxmox homelab (Immich, Pi-hole,
