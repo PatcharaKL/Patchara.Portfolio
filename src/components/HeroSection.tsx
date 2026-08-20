@@ -50,10 +50,9 @@ const HeroSection = () => {
             in a banking environment
           </p>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            I&apos;m Patchara — sole engineer and product owner of KInfra
-            Provisioning Center, an internal developer platform at KBTG that
-            turns a multi-day, multi-system manual provisioning process into
-            self-service infrastructure requests.
+            I&apos;m Patchara - sole engineer and product owner of KInfra at
+            KBTG, an internal platform that takes a multi-day, multi-team
+            provisioning process and makes it self-service.
           </p>
         </motion.div>
 
